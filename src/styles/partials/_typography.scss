@@ -1,0 +1,22 @@
+@use './variables' as *;
+
+  @font-face {
+    font-family: 'Newsreader';
+    src: url(../../assets/Font/Newsreader-Light.woff) format("woff"),
+    url(../../assets/Font/Newsreader-LightItalic.woff) format("woff2");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: 'Newsreader';
+    src: url(../../assets/Font/Newsreader-Regular.woff) format("woff");
+    font-weight: 400;
+    
+  }
+
+  @font-face {
+    font-family: 'Outfit';
+    src: url(../../assets/Font/Outfit-Light.woff) format("woff"),
+    url(../../assets/Font/Outfit-Medium.woff) format("woff2");
+    font-weight: 500;
+  }

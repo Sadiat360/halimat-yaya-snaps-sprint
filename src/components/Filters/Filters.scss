@@ -1,0 +1,15 @@
+@use '../../styles/partials/variables'  as*;
+@use '../../styles/partials/mixins' as *;
+
+.filter-cta{
+   
+    padding: 8px 16px;
+    background-color: $pistachio-color;
+    border: 2px solid $forest-color;
+    border-radius: 10px;
+    margin: 0.2rem;
+
+    @include tablet{
+        padding: 11px 22px 11px 22px;
+    }
+}
