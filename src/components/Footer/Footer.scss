@@ -1,0 +1,72 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+
+.footer{
+    width: 100%;
+    background-color: $pistachio-color;
+    
+    
+    @include tablet{
+        height: 40vh;
+        padding-top: 2rem;
+    }
+
+    &-logo-lists-links__container{
+        width: 100%;
+        @include flex-center(column);
+        justify-content: space-between;
+
+        @include tablet{
+            @include flex-center(row);
+            justify-content: space-between;
+        }
+    }
+    &-container__logo{
+        @include logo;
+        
+        @include tablet{
+            margin-right: 5rem;
+        }
+        
+    }
+
+    &-container__lists{
+         @include body-font-mob;
+        padding: 1rem;
+        @include flex-center(column);
+       
+        @include tablet{
+            @include body-font-tab;
+            @include flex-center(row);
+            justify-content: space-between;
+            margin-left: 20%;
+        }
+
+    }
+    &-container__box{
+        padding: 1rem;
+    }
+    &-container__item{
+        list-style: none;
+    }
+    &-icon__links{
+        width: 45%;
+        padding: 1rem;
+        @include flex-center (row);
+        justify-content: space-between;
+        
+
+        @include tablet{
+            width: 20%;
+        }
+    }
+    &-icon__anchor{
+        width: 50px;
+        color: $forest-color;
+    }
+   
+
+}
