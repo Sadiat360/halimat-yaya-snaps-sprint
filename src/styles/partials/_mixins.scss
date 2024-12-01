@@ -17,3 +17,50 @@
   display: flex;
   flex-direction: $direction;
 }
+@mixin logo {
+  font-size: 2rem;
+  text-decoration: none;
+  color: $black-color;
+  padding: 1rem;
+}
+
+@mixin body-font-mob {
+  font-size: 0.75rem;
+  line-height: 15px;
+  font-weight: 500; 
+  font-family: 'Newsreader';
+}
+@mixin body-font-tab {
+  font-size: 1.25rem;
+  line-height: 20px;
+
+}
+
+@mixin title-font-mob {
+  font-size: 1.625rem;
+  line-height: 38px;
+  font-weight: 300; 
+  font-family: 'Newsreader';
+}
+
+@mixin title-font-tab {
+  font-size: 3.25rem;
+  line-height: 66px;
+}
+@mixin heading-font-mob {
+  font-size: 1.125rem;
+  line-height: 23px;
+  font-weight: 500;
+
+}
+@mixin heading-font-tab {
+  font-size: 1.5rem;
+  line-height: 30px;
+  font-weight: 500;
+
+}
+@mixin tags-font-mob{
+  font-size: 1rem;
+  font-family: 'Newsreader';
+  font-weight: 500;
+}

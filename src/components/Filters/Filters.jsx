@@ -1,15 +1,18 @@
 import './Filters.scss';
 
-function Filters ({name}){
+function Filters ({tag, isSelectedTag, onClick}){
+
+
 
     return(
 
-        <button className='filter-cta'
-        variant= "secondary"
-        styles= "{['round']}"
-        size= "medium"> {name} </button>
- 
-            //  <li className='filter-cta'> {name}</li>
+        <button 
+
+            className={`filter-cta ${isSelectedTag ? 'active' : ''}`}
+            onClick ={() => onClick(tag)}
+
+             > {tag} </button>
+
        
     )
 }

@@ -6,13 +6,12 @@
     width:  100%;
     padding-top:1rem;
     background-color: $pistachio-color;
-    display: grid; /* Define this container as a grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 1rem; /* Space between the grid items */
-    // padding: 20px; /* Add some padding around the grid */
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 1rem; 
     padding-left: 1rem;
     padding-right: 1rem;
-    justify-items: center; /* Center-align items horizontally */
+    justify-items: center; 
 
     @include tablet{
         gap: 1.5rem;
@@ -21,7 +20,12 @@
         padding-right: 1.5rem;
     }
    
-    
+    &-item__title{
+        @include tags-font-mob;
+    }
+    &-item__tags-list{
+        @include tags-font-mob;
+    }
     
 
     

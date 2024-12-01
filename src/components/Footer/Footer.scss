@@ -14,14 +14,27 @@
         padding-top: 2rem;
     }
 
-    &-logo-lists-links__container{
+    &-frame {
         width: 100%;
         @include flex-center(column);
         justify-content: space-between;
 
-        @include tablet{
+    
+        @include desktop{
             @include flex-center(row);
             justify-content: space-between;
+          
+        }
+    }
+    &-logo-lists__container{
+        
+        @include tablet{  
+         @include flex-center(row);
+         justify-content: space-between;
+          
+        }
+        @include desktop{
+            width: 70%;
         }
     }
     &-container__logo{
@@ -35,8 +48,7 @@
 
     &-container__lists{
          @include body-font-mob;
-        padding: 1rem;
-        @include flex-center(column);
+         @include flex-center(column);
        
         @include tablet{
             @include body-font-tab;
@@ -51,6 +63,9 @@
     }
     &-container__item{
         list-style: none;
+        @include body-font-mob;
+        padding-top: 1rem;
+        @include body-font-tab;
     }
     &-icon__links{
         width: 45%;
@@ -68,5 +83,19 @@
         color: $forest-color;
     }
    
+    &-copryt__box{
+       width: 100%;
 
+       @include flex-center(row);
+    }
+    &__copryt{
+        list-style: none;
+        padding: 1rem;
+        color: $sea-color;
+        @include body-font-mob;
+
+        @include tablet{
+            @include body-font-tab;
+        }
+    }
 }

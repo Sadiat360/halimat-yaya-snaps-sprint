@@ -5,18 +5,16 @@
 
 
 .header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     height: 5rem;
     background: $pistachio-color;
-   // border-bottom: solid 1px;
+    position: fixed;
     z-index: 10;
 
     &__logo{
-        font-size: 2rem;
-        text-decoration: none;
-        color: $black-color;
-        padding: 1rem;
+        @include logo;
         @include tablet{
             font-size: 2.5rem;
         }
@@ -25,27 +23,40 @@
         padding: 1rem;
      }
   }
-  .default-cta{
+.default-cta{
     padding: 8px 16px;
     background-color: $pistachio-color;
     border: 2px solid $forest-color;
     border-radius: 20px;
+    cursor: pointer;
+
+    &:hover {
+       background-color: $forest-color;
+       color: $white-color;
+
+    }
 
     @include tablet{
         padding: 11px 22px 11px 22px;
     }
+   
+    
+}
+.default-cta:hover svg path {
+    fill: #ffff;
 }
 
-  main{
-    width:  100%;
 
-    @include tablet{
-        @include flex-center(row);
-    }
-  }
+
+.container{
+       width:  100%;
+       @include tablet{
+           @include flex-center(row-reverse);
+       }
+     }
 .filters{
     width: 100%;
-    background-color: $sea-color;
+    background-color: $sage-color;
     padding: 1rem;
 
     &__tag{
@@ -57,23 +68,31 @@
     height: 16rem;
     background-color: $pistachio-color;
     padding: 1rem;
+    padding-top: 1.5rem;
 
     @include tablet{
-        height: 100vh;
+        height: 60vh;
         padding: 2rem;
+    }
+    @include desktop{
+        height: 100vh;
     }
 
     &__content{
+        padding-top: 4rem;
+        
         @include tablet{
-            width: 50%;
+            width: 70%;
+            padding-top: 5rem;
         }
         
     }
     &__mission{
-        font-size: 18px;
+        font-size: 1.125rem;
         color: $black-color;
         line-height: 23px;
         font-weight: 500;
+        font-family: 'Newsreader';
     }
     @include tablet{
         font-size: 1.5rem;
@@ -82,18 +101,18 @@
 
     }
     &__title{
-        font-size: 1.6rem;
-        line-height: 38px;
-        font-weight: 300;
+        padding-top: 1rem;
+        @include title-font-mob;
 
         @include tablet{
-            font-size: 3.25rem;
-            line-height: 66px;
+            @include title-font-tab;
         }
     }
 
     &__title-italic{
         font-style: italic;
+        font-family: 'Newsreader';
     }
 
 }
+

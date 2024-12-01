@@ -3,29 +3,30 @@ import photosData from '../../data/photos.json';
 import { useState } from 'react';
 import GalleryCard from '../GalleryCard/GalleryCard';
 
-function PhotosList(props){
+function GalleryList(props){
     const [photos, setPhotos] = useState (photosData);
 
-    console.log("photo data is wroking: ", props);
+    let filteredPhotos = [];
+
+    if (props.selectedTag !== "") {
+        filteredPhotos = photos.filter((photo) => {
+            return photo.tags.includes(props.selectedTag);
+        });
+    } else {
+        filteredPhotos = photos
+    }
 
     return(
 
         <section className='gallery'>
            
-
-           {photos.map((photos) => {
-                    return <GalleryCard key ={photos.id}  image = {photos}/>
-                   })}
-           {/* <div className='gallery__item-frame'>
-
-              
-
-           </div> */}
-               
+           { filteredPhotos.map((photo) => {
+                    return <GalleryCard key ={photo.id}  image = {photo}/>
+                   })} 
                
            
         </section>
     )
 }
 
-export default PhotosList;
+export default GalleryList;
