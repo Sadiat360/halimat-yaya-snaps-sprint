@@ -7,3 +7,66 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+
+.filters{
+    width: 100%;
+    background-color: $sage-color;
+    padding: 1rem;
+
+    &__tag{
+        color: $black-color;
+    }
+}
+.hero{
+    width: 100%;
+    height: 16rem;
+    background-color: $pistachio-color;
+    padding: 1rem;
+    padding-top: 1.5rem;
+
+    @include tablet{
+        height: 60vh;
+        padding: 2rem;
+    }
+    @include desktop{
+        height: 100vh;
+    }
+
+    &__content{
+        padding-top: 4rem;
+        
+        @include tablet{
+            width: 70%;
+            padding-top: 5rem;
+        }
+        
+    }
+    &__mission{
+        font-size: 1.125rem;
+        color: $black-color;
+        line-height: 23px;
+        font-weight: 500;
+        font-family: 'Newsreader';
+    }
+    @include tablet{
+        font-size: 1.5rem;
+        line-height: 26px;
+       
+
+    }
+    &__title{
+        padding-top: 1rem;
+        @include title-font-mob;
+
+        @include tablet{
+            @include title-font-tab;
+        }
+    }
+
+    &__title-italic{
+        font-style: italic;
+        font-family: 'Newsreader';
+    }
+
+}

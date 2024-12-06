@@ -5,6 +5,8 @@ import GalleryCard from '../GalleryCard/GalleryCard';
 
 function GalleryList(props){
     const [photos, setPhotos] = useState (photosData);
+    
+   
 
     let filteredPhotos = [];
 
@@ -21,7 +23,7 @@ function GalleryList(props){
         <section className='gallery'>
            
            { filteredPhotos.map((photo) => {
-                    return <GalleryCard key ={photo.id}  image = {photo}/>
+                    return <GalleryCard key ={photo.id}  photo = {photo}/>
                    })} 
                
            

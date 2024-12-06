@@ -1,0 +1,52 @@
+@use  '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    background: $pistachio-color;
+    position: fixed;
+    z-index: 10;
+
+    &__logo{
+        @include logo;
+        @include tablet{
+            font-size: 2.5rem;
+        }
+    }
+     &__nav{
+        padding: 1rem;
+     }
+
+     &__link{
+        text-decoration: none;
+     }
+  }
+.default-cta{
+    padding: 8px 16px;
+    background-color: $pistachio-color;
+    border: 2px solid $forest-color;
+    border-radius: 20px;
+    cursor: pointer;
+
+
+    &:hover {
+       background-color: $forest-color;
+       color: $white-color;
+
+    }
+
+    @include tablet{
+        padding: 11px 22px 11px 22px;
+    }
+   
+    
+}
+.default-cta:hover svg path {
+    fill: #ffff;
+}
