@@ -24,7 +24,7 @@ function HomePage() {
     <>
         
       
-      <Header handleHomeFilter = {handleFilterClick}/>
+      <Header handleHomeFilter = {handleFilterClick} isHome={true}/>
   
       <div className='container'>
   

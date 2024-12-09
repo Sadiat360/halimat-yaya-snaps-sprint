@@ -7,6 +7,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+ body{
+   background-color: $pistachio-color; 
+ }
 
 
 .filters{
@@ -31,6 +34,8 @@
     }
     @include desktop{
         height: 100vh;
+        padding-top: 3rem;
+
     }
 
     &__content{

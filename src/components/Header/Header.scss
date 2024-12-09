@@ -25,6 +25,22 @@
 
      &__link{
         text-decoration: none;
+        color: $forest-color;
+        align-items: center;
+        margin-left: 1rem;
+        font-size: 1rem;
+        line-height: 20px;
+
+        @include tablet{
+           
+            margin-left: 2rem;
+            @include body-font-tab;
+    
+        }
+    
+     }
+     &__icon{
+        margin-right: 0.5rem;
      }
   }
 .default-cta{
@@ -49,4 +65,5 @@
 }
 .default-cta:hover svg path {
     fill: #ffff;
+    
 }

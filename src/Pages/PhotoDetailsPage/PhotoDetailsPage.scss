@@ -6,9 +6,24 @@
 
 .single-Photo{
     width:  100%;
-    padding-top:4rem;
     background-color: $pistachio-color;
-    padding: 1rem;
+    padding-top: 5rem;
+    @include body-padding-mob;
+
+    @include tablet{
+        width:  95%;
+        margin: 0 auto;
+        padding: 0;
+        @include body-padding-tab;
+        padding-top: 8rem;
+    }
+    @include desktop{
+        width:  80%;
+        margin: 0 auto;
+        padding: 0;
+        @include body-padding-desk;
+        padding-top: 9rem;
+    }
     
    
    &__box{
@@ -17,7 +32,7 @@
     border-radius: 12px;
     background-color: $sage-color;
     position: relative;
-   
+
    }
     
 
@@ -41,6 +56,10 @@
        background-color: $sage-color;
        border-bottom-left-radius: 12px;
        border-bottom-right-radius: 12px;
+
+       @include tablet{
+        margin-bottom: 1rem;
+       }
       
    }
 
@@ -63,21 +82,145 @@
            color: $black-color;
        }
    }
+   &__container{
+       height: 7.5rem;
+       position: relative;
+       @include tablet{
+        height: 10rem;
+    }
+
+   }
    &__deets{
+
+    width: 100%;
+    @include body-padding-mob;
+    @include flex-center(row);
+    justify-content: space-between;
+
+   
+
+    @include tablet{
+        @include body-padding-tab;
+        @include flex-center(row);
+        justify-content: space-between;
+        align-items: center;
+    }
+   }
+
+   &__frame{
     width: 100%;
     @include flex-center(row);
     justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1rem;
    }
-   &__icon{
+   
+   &__title{
+       @include body-font-mob;
+       position: absolute;
+       left: 3%;
+       top: 5rem;
+
+       @include tablet{
+
+        @include body-font-tab;
+        margin-top: 1rem;
+        left: 40%;
+        top: 3.5rem;
+       
+        @include desktop{
+            left: 35%;
+            top: 3.5rem;
+        }
+    }
+   }
+   
+
+   &__list{
     list-style: none;
+    @include body-font-mob;
+    margin-bottom: 0.5rem;
+
+    
+    @include tablet{
+        @include body-font-tab;
+    }
    }
+
+    &__icon{
+        margin: 0.1rem;
+        font-size: 0.75rem;
+        line-height: 15px;
+        
+    }
+    
+ 
    &__date{
-    @extend .single-Photo__icon;
+    list-style: none;
+    @include body-font-mob;
+
+    @include tablet{
+        @include body-font-tab;
+        
+    }
    }
-   
-   
       
   
+}
+
+.comment{
+
+    width: 100%;
+    background-color: $pistachio-color;
+    padding: 1rem;
+
+    @include tablet{
+        @include body-padding-tab;
+    }
+    @include desktop{
+        @include body-padding-desk;
+    }
+}
+.comment-box{
+   
+
+    @include tablet{
+        @include body-padding-tab;
+    }
+    @include desktop{
+        @include body-padding-desk;
+    }
+    &__number{
+        padding-bottom: 1rem;
+        border-bottom: 2px solid $sea-color;
+        @include body-font-mob;
+        
+        @include tablet{
+            @include body-font-tab;
+        }
+       
+    }
+   
+     &__content{
+        border-bottom: 2px solid $sea-color;
+     }
+     &__frame{
+        @include flex-center(row);
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        color: $forest-color;
+        @include body-font-mob;
+        
+     }
+     &__name{
+        @include body-font-mob;
+        
+        @include tablet{
+            @include body-font-tab;
+        }
+     }
+     &__msg{
+        @extend .comment-box__name;
+        padding-bottom: 1rem;
+     }
+
 }

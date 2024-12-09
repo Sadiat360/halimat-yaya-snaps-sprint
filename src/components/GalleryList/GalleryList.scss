@@ -19,6 +19,9 @@
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
+    @include desktop{
+        padding-top: 4rem;
+    }
    
     &-item__title{
         @include tags-font-mob;

@@ -3,7 +3,6 @@ import './Filters.scss';
 function Filters ({tag, isSelectedTag, onClick}){
 
 
-
     return(
 
         <button 
