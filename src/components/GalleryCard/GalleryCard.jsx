@@ -5,16 +5,7 @@ import axios from 'axios';
 
 function GalleryCard({photo}){
    
-   useEffect(() =>{
-      async function getPhoto() {
-         const response = await axios.get(
-            "https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=019425bb-7b53-4fc1-b033-f24347776ef9"
-         );
-      }
-      getPhoto();
   
-   }, []);
-
 
     return(
 

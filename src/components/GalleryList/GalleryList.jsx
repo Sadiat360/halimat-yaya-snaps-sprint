@@ -1,10 +1,26 @@
 import './GalleryList.scss';
-import photosData from '../../data/photos.json';
-import { useState } from 'react';
+// import photosData from '../../data/photos.json';
+import { useState, useEffect } from 'react';
 import GalleryCard from '../GalleryCard/GalleryCard';
+import axios from 'axios'
 
 function GalleryList(props){
-    const [photos, setPhotos] = useState (photosData);
+    const [photos, setPhotos] = useState ([]);
+
+    useEffect(() =>{
+
+        async function getPhoto() {
+           const response = await axios.get(
+              "http://localhost:8080/photos/"
+           );
+
+           setPhotos(response.data);
+           
+        }
+        getPhoto();
+    
+     }, []);
+  
     
    
 
