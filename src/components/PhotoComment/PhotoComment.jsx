@@ -3,7 +3,7 @@ import './photoComment.scss';
 
 function PhotoComments({ comment }){
 
-
+   console.log(comment);
     return(
     
         <div className='comment-box__content'>

@@ -1,10 +1,29 @@
 import './FiltersList.scss';
 import Filters from '../Filters/Filters';
-import tagData from '../../data/tags.json';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 function FiltersList ({selectedTag, handlephotochange}){
+
+     const [tags, setTags] = useState([]);
+
+     useEffect(() =>{
+        async function getTags() {
+  
+          try{
+            const response = await axios.get('http://localhost:8080/tags/');
     
-   
+            setTags(response.data);
+          } catch (error){
+            console.error('Error getting tags:', error)
+          }
+          
+         }
+         getTags();
+       
+     }, []);
+    
     
   return (
     
@@ -14,7 +33,7 @@ function FiltersList ({selectedTag, handlephotochange}){
 
             <ul className='filters-box'>
 
-           {tagData.map((tag,index) => (<Filters key = {index} tag = {tag} 
+           {tags.map((tag,index) => (<Filters key = {index} tag = {tag} 
            
            isSelectedTag={selectedTag === tag} onClick={handlephotochange}  /> 
           

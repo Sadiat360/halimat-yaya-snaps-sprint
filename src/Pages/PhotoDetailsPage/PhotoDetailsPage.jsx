@@ -14,11 +14,7 @@ function PhotoDetailsPage(props){
 
    
    const params = useParams();
-   const baseURL = "https://unit-3-project-c5faaab51857.herokuapp.com";
-
    photoDetails.timestamp = new Date().toLocaleDateString();
-  
-  
    
    
     /// function to get photos////////
@@ -28,7 +24,7 @@ function PhotoDetailsPage(props){
 
         try{
             const response = await axios.get(
-                `${baseURL}/photos/${params.photoId}/?api_key=019425bb-7b53-4fc1-b033-f24347776ef9`
+                `http://localhost:8080/photos/${params.photoId}/`
             );
            
             setPhotoDetails(response.data);
@@ -36,7 +32,6 @@ function PhotoDetailsPage(props){
         } catch (error){
             console.error('error getting photo details:', error);
         }
-        
         
       }
       getPhotoDetails();
@@ -51,7 +46,7 @@ function PhotoDetailsPage(props){
         try{
             const response = await axios.get(
             
-                `${baseURL}/photos/${params.photoId}/comments?api_key=019425bb-7b53-4fc1-b033-f24347776ef9`
+                `http://localhost:8080/photos/${params.photoId}/comments`
             );
            
             setComments(response.data);
@@ -65,45 +60,40 @@ function PhotoDetailsPage(props){
      getComments();
       
     }, [])
-
+  
  
     async function postComment(newComment) {
 
          try{
-             const response = await axios.post(`${baseURL}/photos/${params.photoId}/comments?api_key=019425bb-7b53-4fc1-b033-f24347776ef9`, newComment); 
+             const response = await axios.post(`http://localhost:8080/photos/${params.photoId}/comments`, newComment); 
              setComments((comments) =>[response.data, ...comments]);
+
+            const timestamp = Date.now();
+             console.log(new Date(response.data.timestamp).toLocaleString());
            
          } catch (error){
              console.error('error posting comment:', error);
          }
       
-       
      }
  
 
-    function handleFormSubmit({userName, text}){
-
+    function handleFormSubmit({name, comment}){
 
         
-        if (userName === "" || text === ""){
+        if (name === "" || comment === ""){
             alert("Pleas fill all input fields")
 
             return;
         } 
           
-           
 
         const newComment = {
-            name: userName,
-            comment: text,
-
-            ///whenever i post a new comment it shows at the top of the comment lists
-            /// however, when i refresh it goes to the bottom.
+            name: name,
+            comment: comment,
             
         };
        postComment(newComment);
-
-        
        
        
     }
@@ -126,9 +116,7 @@ function PhotoDetailsPage(props){
 
             {comments.map((comment, index) =>{
 
-            return (<PhotoComments key={comment.id || index} comment={{...comment, timestamp: new Date(comment.timestamp).toLocaleDateString(),}} />) 
-
-           
+            return (<PhotoComments key={comment.id || index} comment={{...comment, timestamp: new Date(comment.timestamp).toLocaleDateString()}} />) 
 
              })}  
         

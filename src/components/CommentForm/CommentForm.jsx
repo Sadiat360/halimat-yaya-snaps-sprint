@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 function CommentForm({handleFormSubmit}){
  
-    const [ formValues, setFormValues] = useState({userName:'', text:''});
+    const [ formValues, setFormValues] = useState({name:'', comment:''});
 
 
     function handleInputChange(event){
@@ -20,7 +20,9 @@ function CommentForm({handleFormSubmit}){
         event.preventDefault();
         handleFormSubmit(formValues);
 
-        setFormValues({userName:'', text:''});
+        setFormValues({name:'', comment:''});
+
+        // console.log(formValues);
     }
 
     
@@ -35,17 +37,17 @@ function CommentForm({handleFormSubmit}){
 
                  <input className='comment-form__input' 
                  onChange={handleInputChange}
-                 name='userName' 
+                 name='name' 
                  type='text'  
-                 value ={formValues.userName}/>
+                 value ={formValues.name}/>
                  
                 <label className='comment-form__label' htmlFor='comment'>Comment</label>
 
                  <textarea className='comment-form__text'
                   onChange={handleInputChange}
-                  name="text" 
+                  name="comment" 
                   row='15' 
-                  value ={formValues.text}>
+                  value ={formValues.comment}>
 
                   </textarea>
 
