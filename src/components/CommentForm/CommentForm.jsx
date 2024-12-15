@@ -22,7 +22,6 @@ function CommentForm({handleFormSubmit}){
 
         setFormValues({name:'', comment:''});
 
-        // console.log(formValues);
     }
 
     
@@ -55,11 +54,6 @@ function CommentForm({handleFormSubmit}){
 
 
              </form>
-
-
-                 
-
-
          
            
              </>

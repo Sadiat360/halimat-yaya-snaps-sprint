@@ -1,5 +1,4 @@
 import './GalleryList.scss';
-// import photosData from '../../data/photos.json';
 import { useState, useEffect } from 'react';
 import GalleryCard from '../GalleryCard/GalleryCard';
 import axios from 'axios'
