@@ -5,14 +5,14 @@ import axios from 'axios';
 
 function GalleryCard({photo}){
    
-  
+ 
 
     return(
 
      <figure className='gallery-item'>
 
-       <Link to= {`/photo/${photo.id}`} key={photo.id}>
-       <img src={photo.photo} alt="image" className='gallery-item__image' />
+       <Link to= {`/photo/${photo.id}`} >
+       <img src={`http://localhost:8080/images/${photo.photo}`} alt="image" className='gallery-item__image' />
        </Link> 
        
 

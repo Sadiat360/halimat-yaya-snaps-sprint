@@ -8,13 +8,13 @@ import SinglePhoto from '../../components/SinglePhoto/SinglePhoto';
 import Header from '../../components/Header/Header';
 
 
+
 function PhotoDetailsPage(props){
    const [photoDetails, setPhotoDetails] = useState({});
    const [comments, setComments] = useState([]);
 
    
    const params = useParams();
-   photoDetails.timestamp = new Date().toLocaleDateString();
    
    
     /// function to get photos////////
@@ -68,9 +68,7 @@ function PhotoDetailsPage(props){
              const response = await axios.post(`http://localhost:8080/photos/${params.photoId}/comments`, newComment); 
              setComments((comments) =>[response.data, ...comments]);
 
-            const timestamp = Date.now();
-             console.log(new Date(response.data.timestamp).toLocaleString());
-           
+          
          } catch (error){
              console.error('error posting comment:', error);
          }
@@ -86,7 +84,6 @@ function PhotoDetailsPage(props){
 
             return;
         } 
-          
 
         const newComment = {
             name: name,
@@ -116,7 +113,7 @@ function PhotoDetailsPage(props){
 
             {comments.map((comment, index) =>{
 
-            return (<PhotoComments key={comment.id || index} comment={{...comment, timestamp: new Date(comment.timestamp).toLocaleDateString()}} />) 
+            return (<PhotoComments key={comment.id || index} comment={comment}  />) 
 
              })}  
         
