@@ -12,7 +12,7 @@ function FiltersList ({selectedTag, handlephotochange}){
         async function getTags() {
   
           try{
-            const response = await axios.get('http://localhost:8080/tags/');
+            const response = await axios.get('https://snapsweb-028984f51f2c.herokuapp.com/tags/');
     
             setTags(response.data);
           } catch (error){
