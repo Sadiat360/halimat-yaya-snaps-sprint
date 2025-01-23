@@ -11,6 +11,7 @@
     margin:0.5rem;
     cursor: pointer;
     @include body-font-mob;
+    color: $black-color;
 
     @include tablet{
         @include body-font-tab;
