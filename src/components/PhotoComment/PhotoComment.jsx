@@ -1,4 +1,4 @@
-import './photoComment.scss';
+import './PhotoComment.scss';
 import { formatDate } from '../../utils/utils';
 
 

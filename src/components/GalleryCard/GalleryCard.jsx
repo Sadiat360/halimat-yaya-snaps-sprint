@@ -4,7 +4,7 @@ import './GalleryCard.scss';
 import axios from 'axios';
 
 function GalleryCard({photo}){
-   
+   console.log(photo);
  
 
     return(
@@ -12,7 +12,7 @@ function GalleryCard({photo}){
      <figure className='gallery-item'>
 
        <Link to= {`/photo/${photo.id}`} >
-       <img src={`http://localhost:8080/images/${photo.photo}`} alt="image" className='gallery-item__image' />
+       <img src={`https://snapsweb-028984f51f2c.herokuapp.com/images/${photo.photo}`} alt="image" className='gallery-item__image' />
        </Link> 
        
 

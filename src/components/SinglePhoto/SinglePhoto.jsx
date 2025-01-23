@@ -8,7 +8,7 @@ function SinglePhoto ({photoDetails}){
       
         <section className='single-Photo'>
             <figure className='single-Photo__box'>
-         <img className='single-Photo__image' src= {`http://localhost:8080/images/${photoDetails.photo}`} alt='image'/>
+         <img className='single-Photo__image' src= {`https://snapsweb-028984f51f2c.herokuapp.com/images/${photoDetails.photo}`} alt='image'/>
          
         
         <div className='single-Photo__container'>

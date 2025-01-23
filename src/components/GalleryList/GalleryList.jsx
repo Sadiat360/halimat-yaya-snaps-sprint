@@ -10,7 +10,7 @@ function GalleryList(props){
 
         async function getPhoto() {
            const response = await axios.get(
-              "http://localhost:8080/photos/"
+              "https://snapsweb-028984f51f2c.herokuapp.com/photos/"
            );
 
            setPhotos(response.data);
