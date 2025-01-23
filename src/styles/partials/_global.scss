@@ -27,14 +27,17 @@
     background-color: $pistachio-color;
     padding: 1rem;
     padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 
     @include tablet{
         height: 60vh;
         padding: 2rem;
+        padding-bottom: 0;
     }
     @include desktop{
         height: 100vh;
         padding-top: 3rem;
+        padding-bottom: 0;
 
     }
 
