@@ -65,7 +65,7 @@ function PhotoDetailsPage(props){
     async function postComment(newComment) {
 
          try{
-             const response = await axios.post(`http://localhost:8080/photos/${params.photoId}/comments`, newComment); 
+             const response = await axios.post(`https://snapsweb-028984f51f2c.herokuapp.com/photos/${params.photoId}/comments`, newComment); 
              setComments((comments) =>[response.data, ...comments]);
 
           
