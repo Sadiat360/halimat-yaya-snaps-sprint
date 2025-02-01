@@ -46,7 +46,7 @@ function PhotoDetailsPage(props){
         try{
             const response = await axios.get(
             
-                `http://localhost:8080/photos/${params.photoId}/comments`
+                `https://snapsweb-028984f51f2c.herokuapp.com/photos/${params.photoId}/comments`
             );
            
             setComments(response.data);
