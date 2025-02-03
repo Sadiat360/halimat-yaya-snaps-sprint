@@ -16,16 +16,16 @@ link to Live-Demo https://snapsweb.netlify.app/
 
 ### Overview
 
-Snaps a photo-sharing app similar to Instagram, where photographers can share their work.And users can view magnificent works of each photographers, view photo details, see likes,read previous comments and new comments.
+Snaps a photo-sharing app similar to Instagram, where photographers can share their work.And users can view magnificent works of each photographers, view photo details, see likes, read previous comments and add new comments.
 
 
 
 ## Features 
 
 - As a user, i want to view beautiful photography from photographers
-- As s user i want to filter Gallery lists by Photography's location/City
+- As s user i want to filter Gallery lists by Photo's location/City
 
-- As a user want to see photo details
+- As a user i want to see photo details
 - As a user i want to see photo likes and previous comments
 - As a user i want to add new comments on any photogrphic work that i like.
 
@@ -62,11 +62,6 @@ Snaps a photo-sharing app similar to Instagram, where photographers can share th
 ### APIs
 
 -(https://unit-3-project-c5faaab51857.herokuapp.com/)
-
----
-
-
-## Data 
 
 ---
 
